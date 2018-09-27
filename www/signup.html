@@ -1,0 +1,126 @@
+<ion-view view-title="Sign Up" hide-nav-bar="false" hide-tabs>
+
+		<ion-nav-buttons side="right" hide-nav-bar="false"></ion-nav-buttons>
+
+<ion-content has-bouncing="true" overflow-scroll="false"  class="signup_page has-header">
+    <div class="" style="min-height:122px; height:auto;"></div>
+<div class="row row-center">
+<div class="center_content">
+
+<div class="text">
+  <h4 ng-bind-html="titleCreate"></h4>
+  </div>
+<form name="Form" class="padding" novalidate>
+<div class="list list-inset">
+
+    <div class="profilepic-border" align="center">
+      <div ng-click="loadImage()">
+	      <span class="profilebutton icon ion-camera"></span>
+	      <img class="profilepic" src={{pathForImage(image)}} ng-src="{{imagesfolder}}/user.png" ng-click="upload()">
+      </div>
+    </div>
+    
+    <label class="item-input">
+    <i class="icon ion-android-person placeholder-icon"></i>
+    <input type="text" placeholder="{{formFirstName}}*" ng-model="user.user_firstname" required>
+    </label>
+    
+    <label class="item-input">
+    <i class="icon ion-android-person placeholder-icon"></i>
+    <input type="text" placeholder="{{formLastName}}*" ng-model="user.user_lastname" required>
+    </label>
+    
+    <label class="item-input">
+    <i class="icon ion-ios-calendar placeholder-icon"></i>
+    <input type="date" class="dob" data-placeholder="Geburtstag*" ng-model="user.user_alter" required>
+    </label>
+
+    <label class="item-input">
+    <i class="icon ion-ios-telephone placeholder-icon"></i>
+    <input type="tel" placeholder="{{formPhone}}" ng-model="user.user_phone" ng-minlength="9" >
+    </label>
+    
+    <!--<label class="item-input">type="tel" pattern="[0-9]*"
+        <ion-radio ng-value="männlich" ng-model="user.clientSide" class="geschlecht">
+          männlich
+        </ion-radio>
+        <ion-radio ng-value="weiblich" ng-model="user.clientSide">
+          weiblich
+        </ion-radio>
+    </label>-->
+    <label class = "item item-input item-select">
+        <i class="icon ion-ios-people placeholder-icon"></i>
+        <div class = "input-label textRegistartion">
+             
+          Geschlecht*
+       </div>
+
+       <select ng-model="user.user_geschlecht"  class="ion-input-select--large standort" required>
+           <option value="" selected="selected">Auswählen</option>
+          <option value="männlich">Männlich</option>
+          <option value="weiblich">Weiblich</option>
+       </select>
+    </label>
+    <label class = "item item-input item-select">
+        <i class="icon ion-android-map placeholder-icon"></i>
+        <div class = "input-label textRegistartion">
+          Campus-Standort*
+       </div>
+
+       <select ng-model="user.user_standort"  class="ion-input-select--large standort" required>
+           <option value="" selected="selected">Auswählen</option>
+          <option ng-repeat="item in categories" value="{{item.place_category_name}}">{{item.place_category_name}}</option>
+       </select>
+    </label>
+    <label class="item-input">
+    <i class="icon ion-android-mail placeholder-icon"></i>
+    <input type="email" placeholder="{{formEmail}}*" ng-model="user.user_email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-minlength="5" required>
+    </label>
+
+    <label class="item-input">
+    <i class="icon ion-android-mail placeholder-icon"></i>
+    <input type="email" placeholder="Uni E-Mail" ng-model="user.user_uniemail" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-minlength="5">
+    </label>
+  <!--
+    <label class="item item-input item-icon-righ">
+    <i class="icon ion-locked placeholder-icon"></i>
+    <input name="newPassword" type="password" placeholder="{{formPassword}}" ng-model="user.user_password" ui-show-password required>
+    </label>-->
+    <!--
+    <label class="item item-input item-icon-right">
+              <i class="icon ion-eye" on-touch="showPassword = !showPassword" style="color:#fff"></i>
+              <input type="password" id="password" placeholder="Passwort" ng-model="user.user_password" ng-hide="showPassword">
+            <input type="text" id="passwordRaw" placeholder="Passwort" ng-model="user.user_password" ng-show="showPassword">
+         </label>
+-->
+  <!--  <label class="item-input">
+    <i class="icon ion-locked placeholder-icon"></i>
+    <input match-password="newPassword" name="confirmPassword" ng-model="password.confirm" type="password" placeholder="{{formConfirmPassword}}" required>
+    </label>
+-->
+    <div class="item-input">
+        <i class="icon ion-locked placeholder-icon"></i>
+            <input type="password" id="password" placeholder="Passwort*" ng-model="user.user_password" ng-hide="showPassword" required>
+            <input type="text" id="passwordRaw" placeholder="Passwort*" ng-model="user.user_password" ng-show="showPassword" required>
+            <button class="showpasswordbtn"  type="button" ng-click="showPass()"><i class="icon ion-eye"></i></button>
+       
+     </div><small class="whiteColor" style="margin:10px;">* Pflichtfeld </small>
+  <button class="button button-block button-stable" type="submit" ng-disabled="Form.$invalid" ng-click="saveusers(user)">{{Signup}}</button>
+  
+
+  <div class="" style="margin-bottom:40px;"></div>
+</div>
+</form>
+</div>
+</div>
+
+</div>
+
+
+</ion-content>
+<ion-footer-bar class="signup-footer has-footer" style="position:fixed; bottom:0;">
+  <a href="#/tab/login" class="atag">
+<span class="create" ng-bind-html="AccReady"></span>
+      </a>
+</ion-footer-bar>
+</ion-view>

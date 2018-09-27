@@ -1,0 +1,98 @@
+
+<ion-view>
+<ion-nav-title>
+    {{titlenews}} 
+
+</ion-nav-title>
+
+<ion-nav-buttons side="right">
+<a class="button button-icon icon ion-search" href="#/tab/nsearch"></a>
+</ion-nav-buttons>
+
+<ion-content has-bouncing="true" overflow-scroll="false"  class="">
+
+<h3 class="title_center_with_border">Events in deiner Nähe</h3>
+
+<!--
+<div class="row flex_wrap">
+<div class="col col-33 events" ng-repeat="item in news_categories">
+<div class="image_1">
+<a href="#/tab/ncategory/{{item.id}}">
+<img src="{{imagesfolder}}/{{item.news_category_image}}" ng-src="{{imagesfolder}}/{{item.news_category_image}}">
+<h5 ng-bind-html="item.news_category_name"></h5>
+</a>
+</div>
+</div>
+</div>
+-->
+
+<div class="row responsive-sm flex_wrap">
+    <div class="col col-100 col-res-50" ng-repeat="item in news_categories" style="margin-bottom: 0px;" style="margin-bottom: 0px;">
+     <div class="card-2" style="margin: 0;background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.22) 59%, rgba(0, 0, 0, 0.61) 100%), url('{{imagesfolder}}/{{item.news_category_image}}')" src-is="background">
+      <div class="card-2-category"><span class="card-2-price">{{item.news_category_name}}</span> <!--<span class="card-2-oldprice">{{item.offer_oldprice}}{{currency}}</span>--></div>
+      <div class="card-2-description">
+        <!--<h2 ng-bind-html="item.offer_category_name"></h2>
+        <p ng-bind-html="item.category_name"></p>-->
+      </div>
+      <a class="card-2-link" href="#/tab/ncategory/{{item.id}}" ></a>
+      </div>
+    </div>
+</div>
+<div class="padding">
+    <a class="button button-block greenButton" href="#/tab/nallcategory" type="button">Alle Events</a>
+</div>
+
+</ion-content>
+</ion-view>
+
+<!--
+<ion-view>
+    <ion-nav-title>
+        {{titlenews}} 
+    
+    </ion-nav-title>
+    
+    <ion-nav-buttons side="right">
+    <a class="button button-icon icon ion-search" href="#/tab/nsearch"></a>
+    </ion-nav-buttons>
+    
+    <ion-content has-bouncing="true" overflow-scroll="false"  class="padding">
+    
+    <h3 class="title_center_with_border">Events in deiner Nähe</h3>
+    
+    <div class="row responsive-sm flex_wrap">
+        <div class="col col-100 col-res-50" ng-repeat="item in news"  style="margin-bottom: 0px;">
+          <a href="#/tab/post/{{item.id}}">
+          
+          <div class="card_material">
+            <div class="card_material-image">
+              <img ng-src="{{imagesfolder}}/{{item.news_image}}" cache-src="{{imagesfolder}}/{{item.news_image}}">
+              <span class="card_material-title" ng-bind-html="item.news_title" style="font-size: 16px; padding-bottom: 15px;"></span>
+              
+            </div>
+          </div>
+          </a>
+
+        </div>
+    </div>
+
+    <div class="row responsive-sm flex_wrap FbEvents">
+        <div class="col col-100 col-res-50" ng-repeat="FBitem in eventsNews"  style="margin-bottom: 0px;">
+          <a href="#/tab/postFB/{{FBitem.id}}">
+          
+          <div class="card_material">
+            <div class="card_material-image">
+              <img ng-src="{{FBitem.image}}" cache-src="{{FBitem.image}}">
+              <span class="card_material-title" ng-bind-html="FBitem.place_name" style="font-size: 16px; padding-bottom: 15px;"></span>
+             
+            </div>
+          </div>
+          </a>
+
+        </div>
+    </div>
+
+
+    </ion-content>
+    </ion-view>
+    -->

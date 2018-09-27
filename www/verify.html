@@ -1,0 +1,49 @@
+<ion-view>
+<ion-nav-title></ion-nav-title>
+
+<ion-nav-buttons side="right" hide-nav-bar="true">
+		  
+</ion-nav-buttons>
+
+<ion-content  overflow-scroll="false" has-bouncing="true">
+
+    
+<ion-view>
+	<ion-content  class="padding"><br>
+            <div class="verification">
+    
+                    <!--<img src="img/uniheld_logo.png">-->
+                    <img src="img/verifizieren_icon.svg" class="">
+                    <h4  class="ng-binding">EINFACH DEINE UNI E-MAIL HINTERLEGEN UND BESTÄTIGEN.</h4>
+            </div>
+        <div class="clr">
+        <div class="">
+            <form name="Form">
+            <label class="item-input" style="border: 1px solid #afafaf; border-radius: 3px;margin-bottom: 3px; padding-top:2px; padding-bottom: 2px;">
+            <i class="icon ion-android-mail placeholder-icon"></i>
+            <input type="email" ng-model="user.user_uniemail" placeholder="{{user.user_uniemail}}" value="{{user.user_uniemail}}" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-minlength="5" required>
+            </label>
+               <button class="button button-block greenButton centerAlign" type="submit" ng-disabled="Form.$invalid" ng-click="senden()">Senden</button>
+               <p class="padding text-center" ng-if='msgVerify'>
+                   
+                    Bitte bestätige die Verifizierung und überprüfe auch deinen SPAM ordner.
+             </p>
+             <p class="padding text-center" ng-if='msgVerifyErrorKorrekt'>
+                    <span style="color:red;">
+                         Deine UNI E-Mail Adresse scheint leider nicht korrekt zu sein. Anscheinend ist deine UNI noch nicht bei uns hinterlegt.<br><br>
+                            Wende dich für die manuelle Verfizierung an unser Team:
+                            <br><br>
+                         SUPPORT@UNIHELD:COM</span>
+             </p>
+             <p class="padding text-center" ng-if='msgVerifyError'>Überprüfe deine Eingabe. Deine Uni E-Mail existiert bereits. <br><br>
+                <span style="color:red;">Bestätigungs E-Mail erneut zusenden.<br><br>
+                    Bei Problemen, wende dich an das UNIHELD Team: <br><br>
+                    SUPPORT@UNIHELD:COM</span></p>
+            </form>
+        </div>
+       </div>
+	</ion-content>
+</ion-view>
+        
+</ion-content>
+</ion-view>

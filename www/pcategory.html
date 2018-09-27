@@ -1,0 +1,52 @@
+<!--<ion-view>
+<ion-nav-title ng-bind-html="data.place_type_name"></ion-nav-title>
+
+<ion-content has-bouncing="true" overflow-scroll="false" >
+
+  <div class="row flex_wrap">
+  
+<div class="col col-50 col-res-33" ng-repeat="item in places" ng-if="data.place_type_id==item.place_type">
+
+    <a href="#/tab/place/{{item.id}}">
+      <div class="card_material">
+        <div class="card_material-image">
+          <img src="{{imagesfolder}}/{{item.place_image}}" ng-src="{{imagesfolder}}/{{item.place_image}}">
+          <span class="card_material-title">{{item.place_name | ampersand}}</span>
+        </div>
+      </div>
+    </a>
+</div>
+</div>
+<div class="row flex_wrap">
+<br>
+</div>
+</ion-content>
+</ion-view>
+-->
+
+<ion-view>
+  <ion-nav-title ng-bind-html="data.place_type_name"></ion-nav-title>
+  
+  <ion-content has-bouncing="true" overflow-scroll="false" >
+
+    
+  
+    <div class="row flex_wrap">
+    
+  <div class="col col-50 col-res-33" ng-repeat="item in places">
+  
+      <a href="#/tab/place/{{item.id}}">
+        <div class="card_material minHeight">
+          <div class="card_material-image minHeight">
+            <img src="{{imagesfolder}}/{{item.place_image}}" ng-src="{{imagesfolder}}/{{item.place_image}}">
+            <span class="card_material-title">{{item.place_name | ampersand}}</span>
+          </div>
+        </div>
+      </a>
+  </div>
+  </div>
+  <div class="row flex_wrap">
+  <br>
+  </div>
+  </ion-content>
+  </ion-view>

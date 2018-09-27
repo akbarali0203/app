@@ -1,0 +1,86 @@
+<ion-view>
+<ion-nav-title></ion-nav-title>
+
+<ion-nav-buttons side="right">
+  <a class="button button-icon icon ion-ios-settings-strong" ng-click="share.show()"></a>
+</ion-nav-buttons>
+
+<ion-content has-bouncing="false">
+
+
+<ion-view>
+	<ion-content>
+	    <div id="map" data-tap-disabled="true"></div>
+	</ion-content>
+</ion-view>
+
+    
+<script id="share.html" type="text/ng-template">
+  <ion-modal-view>
+
+    <ion-header-bar class="bar bar-header bar-light">
+      <h1 class="title">Stadt wählen</h1>
+      <div class="button button-icon" ng-click="share.hide()"><span class="icon ion-ios-close-empty"></span></div>
+    </ion-header-bar>
+
+<ion-content has-bouncing="false" class="">
+
+<!-- <h3 class="title_center_with_border">Stadt wählen</h3> -->
+
+
+<div class="row flex_wrap nonPadding bordorTop" >
+  <!--
+    <div class="col-33" ng-repeat="item in categories">
+           
+      <div class="citybanner" ng-click='getName(item.place_category_name);' style="background-image:  linear-gradient(-225deg, rgba(4, 4, 4, 0.28) 0%, rgba(0, 0, 0, 0.27) 25%), url({{imagesfolder}}/{{item.place_category_image}});">
+      <div class="banner-content">
+          
+       
+        <h1 ng-bind-html="item.place_category_name"></h1>
+      </div>
+      </div>
+                 
+      </div>
+    -->
+    <div class="row responsive-sm flex_wrap">
+        <div class="col col-100 col-res-50" ng-repeat="item in categories" style="margin-bottom: 0px;" style="margin-bottom: 0px;">
+         <div class="card-2" style="margin: 0;background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.22) 59%, rgba(0, 0, 0, 0.61) 100%), url('{{imagesfolder}}/{{item.place_category_image}}')" src-is="background">
+          <div class="card-2-category"><span class="card-2-price" ng-bind-html="item.place_category_name"></span> <!--<span class="card-2-oldprice">{{item.offer_oldprice}}{{currency}}</span>--></div>
+          <div class="card-2-description">
+            <!--<h2 ng-bind-html="item.offer_category_name"></h2>
+            <p ng-bind-html="item.category_name"></p>-->
+          </div>
+          <a class="card-2-link" ng-click='getName(item.place_category_name);' ></a>
+        </div>
+        </div>
+ 
+      <div class="col col-100 col-res-50">
+           
+       
+              <div class="card-2" style="margin: 0;background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.22) 59%, rgba(0, 0, 0, 0.61) 100%)" src-is="background">
+               <div class="card-2-category" ng-click='getName("All");'><span class="card-2-price" >Alle Städte</span> <!--<span class="card-2-oldprice">{{item.offer_oldprice}}{{currency}}</span>--></div>
+               <div class="card-2-description">
+                  
+               </div>
+               <a class="card-2-link"  ng-click='getName("All");' ></a>
+             </div>
+             </div>
+         
+
+          <!--<div class="citybanner"  ng-click='getName("All");' style="background-image:  linear-gradient(-225deg, rgba(4, 4, 4, 0.28) 0%, rgba(0, 0, 0, 0.27) 25%), url({{imagesfolder}}/{{item.place_category_image}});">
+          <div class="banner-content">
+            <h1>Alle Städte</h1>
+          </div>
+          </div>
+        -->       
+        </div>
+    </div>
+
+
+    </ion-content>
+  </ion-modal-view>
+</script>
+    
+    
+</ion-content>
+</ion-view>

@@ -1,0 +1,81 @@
+<ion-view view-title="Log In" hide-nav-bar="true" hide-tabs>
+<ion-content has-bouncing="false" class="signup_page" ng-init="checkLoginStatus()">
+  <div class="covervideo"  ng-if="reportSent" ></div>
+    <video controls="controls" preload="metadata" autoplay="autoplay" poster="img/uniheld-frame.png" loop webkit-playsinline="webkit-playsinline" id="backgroundvideo">
+        <source src="https://uniheld-app.cdemo.me/app-video/6plus.mp4" type='video/mp4; codecs="h.264"'>
+        <source src="https://uniheld-app.cdemo.me/app-video/6plus.webm" type="video/webm">
+    </video>
+  
+<div class="row row-center">
+<div class="center_content">
+
+<div class="text">
+    
+<!--<img src="img/uniheld_logo.png">-->
+<img alt="Uniheld" src="img/uniheld_logo.svg" class="logo">
+<h4 ng-bind-html="welcome"></h4>
+</div>
+
+<form name="Form" class="padding" ng-checked="checked()" ng-submit="doLogin()" novalidate>
+<!-- <div class="list list-inset"> -->
+<div class="list">
+    <label class="item-input">
+    <i class="icon ion-android-mail placeholder-icon"></i>
+    <input type="email" placeholder="{{formEmail}}" ng-model="loginData.username" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-minlength="5" required>
+    </label>
+<!--
+    <label class="item-input">
+    <i class="icon ion-locked placeholder-icon"></i>
+    <input type="password" placeholder="{{formPassword}}" ng-model="loginData.password" required>
+    </label>
+    -->
+     <div class="item-input">
+        <i class="icon ion-locked placeholder-icon"></i>
+            <input type="password" placeholder="{{formPassword}}" ng-model="loginData.password" ng-hide="showPassword" required>
+            <input type="text" placeholder="{{formPassword}}" ng-model="loginData.password" ng-show="showPassword" required>
+            <button class="showpasswordbtn"  type="button" ng-click="showPass()"><i class="icon ion-eye"></i></button>
+     </div>
+
+<ul class="list" style="margin-bottom: 5px">
+
+  <li class="item item-toggle" style="background: transparent; color: #fff;border: none;">
+     <span class="remPass" ng-bind-html="remPass"></span>
+     <label class="toggle toggle-balanced">
+       <input type="checkbox" ng-model="user.isChecked" ng-change="insertinvited(user)" ng-click="deschequear()" ng-checked="{{estachequeado}}">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+
+</ul>
+
+  <button class="button button-block button-stable" type="submit" >{{Login}}</button>
+    <button class="button button-block button-fb buttonTopMargin" type="button" ng-click="FBlogin()" ><i class="icon ion-social-facebook placeholder-icon"></i>Login mit Facebook</button>
+    <!--<button class="button button-block button-google buttonTopMargin" ng-if="android" type="button" ng-click="googleSignIn()" ><i class="icon ion-social-google placeholder-icon"></i>Login mit Google</button>
+    <button class="button button-block button-insta buttonTopMargin" ng-if="ios" type="button"  ng-click="instagramLogin()" ><i class="icon ion-social-instagram-outline placeholder-icon"></i>Login mit Instagram</button>-->
+
+</div>
+</form>
+        
+          <br>
+
+    <div class="center_content">
+        <div>
+          <a href="#/tab/forget" class="password" ng-bind-html="forget"></a>
+        </div>
+    </div>
+
+</div>
+</div>
+
+</ion-content>
+
+<a href="#/tab/signup" class="atag"> 
+  <ion-footer-bar class="signup-footer">
+  <span class="create" ng-bind-html="AccCreate"></span>
+</ion-footer-bar>
+</a>
+
+
+</ion-view>

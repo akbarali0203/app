@@ -1,0 +1,27 @@
+<ion-view>
+<ion-nav-title>{{titlecategories}}</ion-nav-title>
+
+<ion-content has-bouncing="true"  overflow-scroll="false" class="">
+
+<h3 class="city_title_center_with_border">{{selectCategory}}</h3>
+
+
+
+<div class="row responsive-sm flex_wrap">
+  <div class="col col-100 col-res-50" ng-repeat="item in categories" style="margin-bottom: 0px;" style="margin-bottom: 0px;">
+   <div class="card-2" style="margin: 0;background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.22) 59%, rgba(0, 0, 0, 0.54) 100%), url('{{imagesfolder}}/{{item.place_category_image}}')" src-is="background">
+    <div class="card-2-category"><span class="card-2-price" ng-bind-html="item.place_category_name"></span> <!--<span class="card-2-oldprice">{{item.offer_oldprice}}{{currency}}</span>--></div>
+    <div class="card-2-description">
+      <!--<h2 ng-bind-html="item.offer_category_name"></h2>
+      <p ng-bind-html="item.category_name"></p>-->
+    </div>
+    <a class="card-2-link" href="#/tab/types/{{item.id}}/{{item.place_category_name}}" ></a>
+  </div>
+  </div>
+  </div>
+
+
+<div ng-bind-html="messageError"></div>
+
+</ion-content>
+</ion-view>

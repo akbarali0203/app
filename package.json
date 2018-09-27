@@ -1,0 +1,71 @@
+{
+    "name": "uniheld",
+    "version": "0.0.1",
+    "description": "An Ionic project",
+    "devDependencies": {
+        "gulp": "^3.5.6",
+        "gulp-clean-css": "^3.7.0",
+        "gulp-rename": "^1.2.0",
+        "gulp-sass": "^3.1.0"
+    },
+    "dependencies": {
+        "cordova-android": "6.4.0",
+        "cordova-plugin-actionsheet": "^2.3.3",
+        "cordova-plugin-camera": "^2.4.1",
+        "cordova-plugin-clipboard-x": "^1.0.1",
+        "cordova-plugin-compat": "^1.2.0",
+        "cordova-plugin-device": "^2.0.1",
+        "cordova-plugin-facebook4": "^1.9.1",
+        "cordova-plugin-file": "^4.3.3",
+        "cordova-plugin-file-transfer": "^1.7.0",
+        "cordova-plugin-filepath": "^1.2.0",
+        "cordova-plugin-geolocation": "git+https://github.com/apache/cordova-plugin-geolocation.git",
+        "cordova-plugin-google-analytics": "git+https://github.com/danwilson/google-analytics-plugin.git",
+        "cordova-plugin-googleplus": "^5.2.1",
+        "cordova-plugin-inappbrowser": "^2.0.2",
+        "cordova-plugin-ionic-keyboard": "^2.0.5",
+        "cordova-plugin-ionic-webview": "^1.1.16",
+        "cordova-plugin-network-information": "^2.0.1",
+        "cordova-plugin-splashscreen": "^5.0.2",
+        "cordova-plugin-statusbar": "^2.2.1",
+        "cordova-plugin-whitelist": "^1.3.3",
+        "cordova-plugin-x-socialsharing": "git+https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git",
+        "cordova-plugin-x-toast": "^2.6.0",
+        "es6-promise-plugin": "^4.1.0",
+        "ionic1-star-rating": "^1.2.13",
+        "onesignal-cordova-plugin": "^2.3.1"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-inappbrowser": {},
+            "cordova-plugin-network-information": {},
+            "cordova-plugin-x-socialsharing": {},
+            "cordova-plugin-x-toast": {},
+            "onesignal-cordova-plugin": {},
+            "cordova-plugin-google-analytics": {},
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-device": {},
+            "cordova-plugin-splashscreen": {},
+            "cordova-plugin-ionic-webview": {},
+            "cordova-plugin-ionic-keyboard": {},
+            "cordova-plugin-geolocation": {},
+            "cordova-plugin-clipboard-x": {},
+            "cordova-plugin-googleplus": {
+                "REVERSED_CLIENT_ID": "605289790491-ckbujdlri8rp5pchetu9443qj4cteel3.apps.googleusercontent.com"
+            },
+            "cordova-plugin-file-transfer": {},
+            "cordova-plugin-filepath": {},
+            "cordova-plugin-actionsheet": {},
+            "cordova-plugin-facebook4": {
+                "APP_ID": "141557813331986",
+                "APP_NAME": "uniheld"
+            },
+            "cordova-plugin-file": {},
+            "cordova-plugin-camera": {}
+        },
+        "platforms": [
+            "android"
+        ]
+    }
+}

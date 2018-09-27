@@ -1,0 +1,210 @@
+<ion-view>
+<ion-nav-title>{{accountTitel}}</ion-nav-title>
+
+<ion-nav-buttons side="right">
+    <a class="button button-icon icon ion-edit" ng-click="share.show()"></a>
+</ion-nav-buttons>
+ 
+<ion-content  overflow-scroll="false" has-bouncing="true" class="padding">
+
+<div style="margin-bottom: 10px;">
+	<div ng-repeat="i in users">
+<!--<div class="list Aktionen-2">-->
+    <div class="" align="center">
+      <div ><img class="profilepic profileBorder" ng-src="{{i.user_photo}}"></div>
+    </div>
+   
+    <div class="padding-bottom" align="center">
+      {{showmsg}}
+    </div>
+  <a class="item">
+    {{accountFirstName}}
+    <span class="item-note">
+      {{i.user_firstname}}
+    </span>
+  </a>
+
+  <a class="item">
+    {{accountLastName}}
+    <span class="item-note">
+      {{i.user_lastname}}
+    </span>
+  </a>
+
+  <a class="item">
+    {{accountPhone}}
+    <span class="item-note">
+      {{i.user_phone}}
+    </span>
+  </a>
+
+  <a class="item">
+    {{accountEmail}}
+    <span class="item-note">
+      {{i.user_email}}
+    </span>
+  </a>
+    
+  <a class="item">
+    Uni E-Mail
+    <span class="item-note">
+      {{i.user_uniemail}}
+    </span>
+  </a>
+
+  <a class="item">
+     Geburtsdatum
+    <span class="item-note">
+      {{i.user_alter | date: 'dd.MM.yyyy'}}
+    </span>
+  </a>
+    
+   <a class="item">
+     Status
+    <span class="item-note">
+      {{i.user_status}}
+    </span>
+  </a>
+    
+  <a class="item">
+     Standort
+    <span class="item-note">
+      {{i.user_standort}}
+    </span>
+  </a>
+
+<div class="padding">
+  <a class="button button-block button-assertive" href="#/tab/uniid" type="button">Student ID</a>
+</div>
+
+
+</div>
+</div>
+
+<div class="list Aktionen">
+
+  <a class="item item-icon-left item-icon-right" href="#/tab/favorites">
+    <i class="icon ion-heart"></i>
+    {{favoritesTitel}}
+    <i class="icon ion-ios-arrow-right"></i>
+  </a>
+
+  <a class="item item-icon-left item-icon-right" href="#/tab/contact">
+    <i class="icon ion-android-mail"></i>
+    {{contactTitel}}
+    <i class="icon ion-ios-arrow-right"></i>
+  </a>
+
+  <a class="item item-icon-left item-icon-right" ng-click="doLogout()">
+    <i class="icon ion-android-lock"></i>
+    {{signoutTitel}}
+    <i class="icon ion-ios-arrow-right"></i>
+  </a>
+
+ 
+</div>
+    
+<!--
+  <script id="share.html" type="text/ng-template">
+  <ion-modal-view class="signup_page">
+
+    <ion-header-bar class="bar bar-header bar-light">
+      <h1 class="title">Profil bearbeiten</h1>
+      <div class="button button-icon" ng-click="share.hide()"><span class="icon ion-ios-close-empty"></span></div>
+    </ion-header-bar>
+    
+    <ion-content has-bouncing="true" class="has-header">
+        <div class="" style="margin-top:50px;"></div>
+      <div class="row row-center">
+      <div class="padding center_content">
+         
+    <div style="margin-bottom: 10px;"  ng-repeat="user in users">
+       <form name="Form" class="padding" novalidate class="editProfileFm" >
+        <div class="list list-inset">
+      
+
+                <div class="profilepic-border" align="center">
+                  <div ng-click="loadImage()">
+                    <span class="profilebutton icon ion-camera" ></span>
+                    <div><img class="profilepic" src={{pathForImage(image)}} ng-src="{{user.user_photo}}" ></div>
+                  </div>
+                </div>
+                <div class="padding-bottom whiteColor" align="center">
+                  {{showmsg}}
+                </div>
+             
+            <label class="item-input">
+            <i class="icon ion-android-person placeholder-icon"></i>
+            <input type="text" placeholder="{{formFirstName}}*" ng-model="user.user_firstname" value="{{user.user_firstname}}" required>
+            </label>
+
+            <label class="item-input">
+            <i class="icon ion-android-person placeholder-icon"></i>
+            <input type="text" placeholder="{{formLastName}}*" value="{{user.user_lastname}}" ng-model="user.user_lastname" required >
+            </label>
+          
+            <label class="item-input">
+            <i class="icon ion-ios-calendar placeholder-icon"></i>
+            <input type="text" ng-if='user_alter' value="{{user.user_alter | date: 'dd.MM.yyyy'}}" readonly>
+            <input type="date" ng-model="user.user_alter" class='dob'  data-placeholder="Geburtstag*" ng-if='!user_alter' required>
+            </label>
+          
+            <label class="item-input"> 
+            <i class="icon ion-ios-telephone placeholder-icon"></i>
+            <input type="tel" placeholder="{{formPhone}}" ng-model="user.user_phone" value="user.user_phone">
+            </label>
+
+            <label class = "item item-input item-select">
+                <i class="icon ion-ios-people placeholder-icon"></i>
+                <div class = "input-label textRegistartion">
+                  Geschlecht*
+               </div>
+               
+               <select ng-model="user.user_geschlecht"  class="ion-input-select--large standort" required>
+                  <option value="" selected="selected">Auswählen</option>
+                  <option value="männlich" ng-selected = "user.user_geschlecht == 'männlich'">Männlich</option>
+                  <option value="weiblich" ng-selected = "user.user_geschlecht == 'weiblich'">Weiblich</option>
+               </select>
+            </label>
+            
+            <label class = "item item-input item-select">
+                <i class="icon ion-android-map placeholder-icon"></i>
+                <div class = "input-label textRegistartion">
+                  Standort*
+               </div>
+               <select ng-model="user.user_standort"  class="ion-input-select--large standort" required>
+                   <option value="" selected="selected">Auswählen</option>
+                  <option ng-repeat="items in categories" value="{{items.place_category_name}}"  ng-selected = "user.user_standort == items.place_category_name">{{items.place_category_name}}</option>
+               </select>
+            </label>
+            
+            <label class="item-input">
+            <i class="icon ion-android-mail placeholder-icon"></i>
+            <input type="email" placeholder="E-Mail*"  value="user.user_email" ng-model="user.user_email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-minlength="5" required>
+            </label>
+
+            <label class="item-input">
+            <i class="icon ion-android-mail placeholder-icon"></i>
+            <input type="email" placeholder="Uni E-Mail" ng-model="user.user_uniemail" value="user.user_uniemail" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-minlength="5">
+            </label>
+
+            <div class="item-input">
+                <i class="icon ion-locked placeholder-icon"></i>
+                    <input type="password" id="password" placeholder="Neu Passwort" ng-model="user.user_password" ng-hide="showPassword">
+                    <input type="text" id="passwordRaw" placeholder="Neu Passwort" ng-model="user.user_password" ng-show="showPassword">
+                    <button class="showpasswordbtn" type="button" ng-click="showPass()"><i class="icon ion-eye"></i></button>
+             </div><small class="whiteColor" style="margin:10px;">* Pflichtfeld </small>
+            <button class="button button-block button-stable centerAlign" type="submit" ng-disabled="Form.$invalid" ng-click="updateProfile(user)">Speichern</button>
+        </div>
+        </form>
+      </div>
+      </div>
+    </div>
+
+    </ion-content>
+  </ion-modal-view>
+</script>
+        -->
+
+</ion-content>
+</ion-view>

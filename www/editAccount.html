@@ -1,0 +1,99 @@
+<ion-view view-title="Edit Account" hide-nav-bar="true" hide-tabs>
+<ion-content has-bouncing="false" class="signup_page">
+
+      <div class="row row-center">
+      <div class="center_content">
+
+<div class="text">
+<h4></h4>
+</div>
+
+<form name="Form" class="padding" novalidate>
+<div class="list list-inset">
+
+    
+    <label class="item-input">
+    <i class="icon ion-android-person placeholder-icon"></i>
+    <input type="text" placeholder="{{formFirstName}}" ng-model="user.user_firstname" required>
+    </label>
+
+    <label class="item-input">
+    <i class="icon ion-android-person placeholder-icon"></i>
+    <input type="text" placeholder="{{formLastName}}" ng-model="user.user_lastname" required>
+    </label>
+
+    <label class="item-input">
+    <i class="icon ion-ios-telephone placeholder-icon"></i>
+    <input type="number" placeholder="{{formPhone}}" ng-model="user.user_phone" ng-minlength="9" required>
+    </label>
+    
+    <!--<label class="item-input">
+        <ion-radio ng-value="männlich" ng-model="user.clientSide" class="geschlecht">
+          männlich
+        </ion-radio>
+        <ion-radio ng-value="weiblich" ng-model="user.clientSide">
+          weiblich
+        </ion-radio>
+    </label>-->
+    <label class = "item item-input item-select">
+        <i class="icon ion-ios-people placeholder-icon"></i>
+        <div class = "input-label textRegistartion">
+             
+          Geschlecht
+       </div>
+
+       <select ng-model="user.user_geschlecht"  class="ion-input-select--large standort" required>
+           <option value="" selected="selected">Auswählen</option>
+          <option value="männlich">Männlich</option>
+          <option value="weiblich">Weiblich</option>
+       </select>
+    </label>
+    <label class = "item item-input item-select">
+        <i class="icon ion-android-map placeholder-icon"></i>
+        <div class = "input-label textRegistartion">
+          Standort
+       </div>
+
+       <select ng-model="user.user_standort"  class="ion-input-select--large standort" required>
+           <option value="" selected="selected">Auswählen</option>
+          <option ng-repeat="item in categories" value="{{item.place_category_name}}">{{item.place_category_name}}</option>
+       </select>
+    </label>
+    <label class="item-input">
+    <i class="icon ion-android-mail placeholder-icon"></i>
+    <input type="email" placeholder="{{formEmail}}" ng-model="user.user_email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-minlength="5" required>
+    </label>
+
+    <label class="item-input">
+    <i class="icon ion-android-mail placeholder-icon"></i>
+    <input type="email" placeholder="Uni E-Mail" ng-model="user.user_uniemail" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-minlength="5" required>
+    </label>
+  
+    <label class="item-input">
+    <i class="icon ion-locked placeholder-icon"></i>
+    <input name="newPassword" type="password" placeholder="{{formPassword}}" ng-model="user.user_password" required>
+    </label>
+
+    <label class="item-input">
+    <i class="icon ion-locked placeholder-icon"></i>
+    <input match-password="newPassword" name="confirmPassword" ng-model="password.confirm" type="password" placeholder="{{formConfirmPassword}}" required>
+    </label>
+
+  <button class="button button-block button-stable" type="submit" ng-disabled="Form.$invalid" ng-click="saveusers()">{{Signup}}</button>
+
+
+</div>
+</form>
+
+</div>
+</div>
+
+</ion-content>
+
+<a href="#/tab/login">
+  <ion-footer-bar class="signup-footer">
+  <span class="create" ng-bind-html="AccReady"></span>
+</ion-footer-bar>
+</a>
+
+</ion-view>

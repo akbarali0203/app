@@ -1,0 +1,55 @@
+<ion-view>
+<ion-nav-title ng-bind-html="data.news_category_name"></ion-nav-title>
+<ion-nav-buttons side="right">
+    <a class="button button-icon icon ion-search" href="#/tab/nsearch"></a>
+    </ion-nav-buttons>
+
+    <!--
+<ion-nav-buttons side="right">
+<a class="button button-icon icon ion-search" href="#/tab/nsearch"></a>
+</ion-nav-buttons>
+-->
+
+<ion-content has-bouncing="true" overflow-scroll="false" >
+
+    <div class="list" ng-repeat="item in news" style="margin-bottom: 5px;border-bottom: 0px solid #eee;">
+
+        <a class="item item-avatar" href="#/tab/post/{{item.id}}" style="border: none;">
+          <img ng-src="{{imagesfolder}}/{{item.news_image}}">
+          <h2 ng-bind-html="item.news_title" style="font-size: 14px;"></h2>
+          <p ng-bind-html="item.category_name"></p>
+        </a>
+    
+    </div>
+    
+    
+    
+    
+<script id="share.html" type="text/ng-template">
+  <ion-modal-view>
+
+    <ion-header-bar class="bar bar-header bar-light">
+      <h1 class="title" ng-bind-html="titleShare"></h1>
+      <div class="button button-icon" ng-click="share.hide()"><span class="icon ion-ios-close-empty"></span></div>
+    </ion-header-bar>
+
+    <ion-content has-bouncing="false" class="social_share">
+
+      <div class="row row-center">
+      <div class="padding center_content">
+
+        <a ng-click="shareViaFacebook()" class="button icon-left ion-social-facebook button-assertive facebook">Facebook</a>
+        <a ng-click="shareViaWhatsApp()" class="button icon-left ion-social-whatsapp button-assertive whatsapp">WhatsApp</a>
+        <a ng-click="shareViaGoogle()" class="button icon-left ion-social-googleplus button-assertive googleplus">Google Plus</a>
+        <a ng-click="shareViaTwitter()" class="button icon-left ion-social-twitter button-assertive twitter">Twitter</a>
+        <a ng-click="OtherShare()" class="button icon-left ion-android-share-alt button-assertive othershare" ng-bind-html="otherShare"></a>
+
+      </div>
+    </div>
+
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+</ion-content>
+</ion-view>

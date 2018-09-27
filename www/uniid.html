@@ -1,0 +1,63 @@
+
+<ion-view>
+		<ion-nav-title></ion-nav-title>
+		
+
+        <ion-nav-buttons side="right">
+            <a class="button button-icon icon ion-edit" ng-click="share.show()"></a>
+        </ion-nav-buttons>
+	
+<ion-content has-bouncing="true" overflow-scroll="false"  class="bgimageuniid">
+
+<div><br><br><div>
+
+<div class="" >
+    <div class="profile-page-header">
+    <!--<img src="https://benefits.uniheld.com/wp-content/themes/geodeo/images/id_icon.JPG" height="85" width="85" alt="Uniheld Id" title="Uniheld Id">-->
+    <!--<b>UNIHELD ID</b>-->
+    <span class="uniid-name">Verifizierte</span><br>
+    <span class="uniid-name">UNIHELD ID</span>
+    </div>
+    </div>
+<div>
+
+<div>
+	<div class="clearfix">
+		<div class="positionRelative">
+			<div class="uniid-border" style="background: url('{{user_photo}}') center center;">
+				<div class="blackoverlay"></div>
+					<span class="tickbg"><img src="img/check_pfeil.svg"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+   <h3 class="text-center uniid-name">{{user_firstname}} {{user_lastname}}</h3>
+   <h4 class="text-center" ng-if='user_uniname'>{{user_uniname}}</h4>
+</div>
+    
+<div class="uni-email-overlay" ng-if="status_user!='verifiziert'" >
+
+    <div class="inner-overaly-layer">
+        <h2> UPS... </h2>
+        <img src="img/smiley.png" title="Uniheld Id" width="160">
+        <h5 class="uniid-name">...DU BIST LEIDER NICHT VERIFIZIERT.</h5><br>
+        <h4>EInfach deine uni e-mail
+            <br> hinterlegen und bestätigen: </h4>
+        <div class="button-varification">
+            <button class="button verificationButtonWidth greenButton" ng-click="verify()" >JETZT VERIFIZIEREN</button>
+        </div>
+        <span class="fontsize">{{showmsg}}</span>
+
+        <div class="button-varification">
+            <button class="button verificationButtonWidth buttonTopMargin akutalisieren" ng-click="verificationChecker()" > Aktualisieren </button>
+        </div>
+    </div>
+
+    
+    
+    
+</div>
+
+</ion-content>
+
+</ion-view>

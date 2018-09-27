@@ -1,0 +1,42 @@
+Copy the www folder and name it "www - iOS"
+
+Chante identifier to com.hoccer.whitelabel.uniheld
+
+
+
+Please generate all icons using the "ionic resources" command.
+
+
+
+Please place all icons in the "www" directory and change the corresponding path inside a config.xml, that you put inside the www folder
+
+
+
+Please remove all Android configs, just iOS is important
+
+
+
+
+I need screenshots:
+
+
+
+886 x 1920 pixels for portrait
+
+1080 x 1920 pixels for portrait
+
+1200 x 1600 pixels
+
+of 
+
+
+one offer detail page (Campus Sim) and of the start page.
+
+
+Please make sure the screenshot look good and that I have atleast 2 screenshots per page
+
+
+
+Please provide me with a 1024x1024 icon file for Uniheld.
+
+Please provide me with a valid test account

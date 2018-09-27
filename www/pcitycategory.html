@@ -1,0 +1,21 @@
+<ion-view>
+<ion-nav-title ng-bind-html="data.place_type_name"></ion-nav-title>
+
+<ion-content has-bouncing="true" overflow-scroll="false" >
+
+  <div class="row flex_wrap">
+<div class="col col-50 col-res-33" ng-repeat="item in places">
+
+    <a href="#/tab/place/{{item.id}}">
+      <div class="card_material">
+        <div class="card_material-image minHeight">
+          <img src="{{imagesfolder}}/{{item.place_image}}" cache-src="{{imagesfolder}}/{{item.place_image}}">
+          <span class="card_material-title" ng-bind-html="item.place_name"></span>
+        </div>
+      </div>
+    </a>
+</div>
+</div>
+
+</ion-content>
+</ion-view>
